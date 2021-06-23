@@ -7,6 +7,7 @@
   --cor-do-texto: #333;
   --gradiente-1: #f6f1b2;
   --gradiente-2: #4599b2;
+  --body-back: white;
 }
 
 h1{
@@ -18,7 +19,7 @@ body{
 }
 
 body {
-  background-color: #fff;
+  background-color: var(--body-back);
 }
 
 strong {
@@ -185,6 +186,7 @@ article {
       --cor-do-texto: #eee;
       --gradiente-1: #350270;
       --gradiente-2: #00080a;
+      --body-back: #00080a;
       /* ... */
     }
   }
