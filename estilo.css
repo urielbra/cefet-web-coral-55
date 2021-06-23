@@ -1,6 +1,15 @@
 /* EXERCÍCIO 1: fontes */
 /* importá-las aqui... e definir as `font-family` da turminha... */
+@import "./fonts/ravie.css";
+@import "./fonts/verdana.css";
 
+h1{
+  font-family: 'ravie', sans-serif;
+}
+body{
+  font-family: 'verdana', sans-serif;
+  margin: 0;
+}
 
 body {
   background-color: #fff;
@@ -10,10 +19,18 @@ strong {
   color: #d027aa;
 }
 
+html, body, #recipiente{
+  min-height: 100vh;
+}
+
 #recipiente {
   background-image: linear-gradient(to bottom, #f6f1b2, #4599b2 80%);
   border-left: 1px solid #d3d3d3;
+  margin: 0 auto;
+  width: 800px;
   border-right: 1px solid #d3d3d3;
+
+
 }
 
 #cardapio {
@@ -42,29 +59,38 @@ strong {
   /* ... */
   /* ... */
   /* ... */
+  display: grid;
+  grid-template-columns: 154px 1fr;
+  grid-template-rows: auto 1fr auto;
 }
 
 #cabecalho-pagina {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
 
 }
 
 #lateral {
-
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
 }
 
 #cardapio {
-
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  padding: 20px;
 }
 
 #rodape-pagina {
-
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
 }
 
 
 
 /* EXERCÍCIO 3: cabeçalho da página */
 #cabecalho-pagina {
-
+  margin: 10px;
 }
 
 #cabecalho-pagina h1 {
@@ -72,6 +98,7 @@ strong {
   font-size: 36px;
   color: #e90c0c;
   font-weight: normal;
+  width: 100%;
 }
 
 #cabecalho-pagina h2 {
@@ -79,35 +106,62 @@ strong {
   font-size: 24px;
   color: #333;
   font-weight: normal;
+  text-align: end;
 }
 
 /* EXERCÍCIO 4: cada item do menu */
 article {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2em;
 }
 
 
 /* EXERCÍCIO 5: o rodapé */
 #rodape-pagina {
+  display: flex;
+  justify-content: flex-end;
+  margin: 40px 15px 25px 0;
+}
+#rodape-pagina > img{
+  cursor: pointer;
 }
 
 /* EXERCÍCIO 6: lateral */
 #lateral {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+
 
 
 /* EXERCÍCIO 7: o ticket */
 #ticket {
+  --tamanho-ticket: 84px;
+  position: fixed;
+  left: -89px;
+  top: 50%;
+  top: calc(50% - var(--tamanho-ticket) / 2);
+  transition: left 200ms ease-in-out;
 }
 
 #ticket:hover {
+  left: 0;
 }
 
 
 /* EXERCÍCIO 8: deslocamento no siri e peixe */
 #siri {
+  position: relative;
+  left: -10px;
+  top: 17px;
 }
 
 #peixe {
+  position: relative;
+  left: -44px;
 }
 
 /* EXERCÍCIO 9: bolhas - no HTML e no JS */
